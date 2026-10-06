@@ -14,6 +14,7 @@ type HealthResponse struct {
 // Роутинг живёт в одном месте, main.go не знает про конкретные пути.
 func Register(mux *http.ServeMux) {
 	mux.HandleFunc("GET /health", health)
+	mux.HandleFunc("GET /version", version)
 }
 
 func health(w http.ResponseWriter, r *http.Request) {
